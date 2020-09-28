@@ -269,12 +269,12 @@
 				TargetAttributes = {
 					BC14B4301DD024270045B3F3 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = NN74NJ78BB;
+						DevelopmentTeam = 898SX5RV3X;
 						ProvisioningStyle = Automatic;
 					};
 					BC81FF9D1DC0AE2300A07CD6 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = NN74NJ78BB;
+						DevelopmentTeam = 898SX5RV3X;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -284,7 +284,7 @@
 					};
 					BCA2705B1DCD83D700F87634 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = NN74NJ78BB;
+						DevelopmentTeam = 898SX5RV3X;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -400,7 +400,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 15;
-				DEVELOPMENT_TEAM = NN74NJ78BB;
+				DEVELOPMENT_TEAM = 898SX5RV3X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = EditorPlus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks ${DEVELOPER_FRAMEWORKS_DIR}";
@@ -420,7 +420,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 15;
-				DEVELOPMENT_TEAM = NN74NJ78BB;
+				DEVELOPMENT_TEAM = 898SX5RV3X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = EditorPlus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks ${DEVELOPER_FRAMEWORKS_DIR}";
@@ -553,7 +553,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 15;
-				DEVELOPMENT_TEAM = NN74NJ78BB;
+				DEVELOPMENT_TEAM = 898SX5RV3X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = MGTextPlus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -575,7 +575,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 15;
-				DEVELOPMENT_TEAM = NN74NJ78BB;
+				DEVELOPMENT_TEAM = 898SX5RV3X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = MGTextPlus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -594,7 +594,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 15;
-				DEVELOPMENT_TEAM = NN74NJ78BB;
+				DEVELOPMENT_TEAM = 898SX5RV3X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Line/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks ${DEVELOPER_FRAMEWORKS_DIR}";
@@ -614,7 +614,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 15;
-				DEVELOPMENT_TEAM = NN74NJ78BB;
+				DEVELOPMENT_TEAM = 898SX5RV3X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Line/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks ${DEVELOPER_FRAMEWORKS_DIR}";
