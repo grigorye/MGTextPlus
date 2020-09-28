@@ -189,19 +189,19 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
             } else if indexSet.count > 1 {
                 guard let currentRow = indexSet.first else { return }
                 
-                let selectedLines: [String] = (selectedLines as? [String])
-                    .flatMap { selectedLines -> [String] in
-                        return selectedLines.enumerated().map { index, line in
-                            if index == 0 {
-                                return line.trimEnd()
-                            } else if index == selectedLines.count - 1 {
-                                return line.trimStart()
-                            } else {
-                                return line.trim()
-                            }
+                let ignoreLastLine = (textRange.end.column == 0) && (textRange.end.line != invocation.buffer.lines.count)
+                let selectedLines: [String] = (selectedLines as? [String] ?? [])
+                    .enumerated().map { index, line in
+                        if index == 0 {
+                            return line.trimEnd()
+                        } else if index == selectedLines.count - 1 {
+                            return line.trimStart()
+                        } else {
+                            return line.trim()
                         }
-                    } ?? []
-                
+                    }
+                    .dropLast(ignoreLastLine ? 1 : 0)
+
                 let newLine = selectedLines.joined(separator: " ")
                 invocation.buffer.lines[currentRow] = newLine
                 
@@ -209,7 +209,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
                     integersIn: Range(
                         uncheckedBounds: (
                             lower: textRange.start.line + 1,
-                            upper: min(textRange.end.line + 1, invocation.buffer.lines.count)
+                            upper: min(textRange.end.line + (ignoreLastLine ? 0 : 1), invocation.buffer.lines.count)
                         )
                     )
                 )
@@ -218,7 +218,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
                 
                 let lineSelection = XCSourceTextRange()
                 lineSelection.start = XCSourceTextPosition(line: textRange.start.line, column: textRange.start.column)
-                lineSelection.end = XCSourceTextPosition(line: textRange.start.line, column: newLine.count - 1)
+                lineSelection.end = XCSourceTextPosition(line: textRange.start.line, column: newLine.count - (ignoreLastLine ? 0 : 1))
                 invocation.buffer.selections.setArray([lineSelection])
             }
         case bundleIdentifier + ".SplitLineByComma":
