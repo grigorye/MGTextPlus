@@ -117,6 +117,27 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
             invocation.buffer.selections.setArray([lineSelection])
         }
         
+        func joinLines(_ selectedLines: [String]) -> String {
+            let openingBracesNotExpectingSpace = "[("
+            let closingBracesNonExpectingSpace = "])"
+            let newLine = selectedLines.reduce("", { acc, line in
+                let separator: String = {
+                    if let c = acc.last, openingBracesNotExpectingSpace.contains(c) {
+                        return ""
+                    }
+                    if let c = line.first, closingBracesNonExpectingSpace.contains(c) {
+                        return ""
+                    }
+                    if acc.isEmpty || line.isEmpty {
+                        return ""
+                    }
+                    return " "
+                }()
+                return acc + separator + line
+            })
+            return newLine
+        }
+        
         func insertLine(direction: CommandDirection) {
             if direction == .down && !notReachingBottom() { return }
             
@@ -176,7 +197,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
                     let secondLine = invocation.buffer.lines[currentRow + 1] as? String
                     else { break }
                 
-                let newLine = firstLine.trimEnd() + " " + secondLine.trimStart()
+                let newLine = joinLines([firstLine.trimEnd(), secondLine.trimStart()])
                 invocation.buffer.lines[currentRow] = newLine
                 invocation.buffer.lines.removeObject(at: currentRow + 1)
                 
@@ -202,7 +223,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
                     }
                     .dropLast(ignoreLastLine ? 1 : 0)
 
-                let newLine = selectedLines.joined(separator: " ")
+                let newLine = joinLines(selectedLines)
                 invocation.buffer.lines[currentRow] = newLine
                 
                 let indexSetToRemove = IndexSet(
